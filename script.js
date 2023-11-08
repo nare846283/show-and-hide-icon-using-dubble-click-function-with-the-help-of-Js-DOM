@@ -1,26 +1,12 @@
-var btn = document.querySelector("button")
-var changeText = document.querySelector("h2")
-var icon = document.querySelector("i")
-var check = 0;
+var con = document.querySelector(".container");
+var icon = document.querySelector("i");
 
-btn.addEventListener('click', function() {
 
-    if(check == 0){
-        changeText.innerHTML = "&#129309 Friends";
-        changeText.style.color = "green";
-        icon.style.opacity = "0";
-        btn.innerHTML = "Remove Friend";
-        btn.style.backgroundColor = "red";
+con.addEventListener('dblclick', function() {
+    icon.style.transform = 'translate(-50%,-50%) scale(3)';
+    icon.style.opacity = .6;
 
-        check = 1;
-    }else{
-        
-        changeText.innerHTML = "Friendship";
-        changeText.style.color = "red";
-        icon.style.opacity = "1";
-        btn.innerHTML = "Add Friend";
-        btn.style.backgroundColor = "green";
-
-        check = 0;
-    }
-})
+    setTimeout(function(){
+        icon.style.opacity = 0;
+    }, 2000);
+});
